@@ -1,0 +1,93 @@
+- generic [ref=f2e6]:
+  - banner [ref=f2e7]:
+    - link [ref=f2e8] [cursor=pointer]:
+      - /url: /ed
+      - img "logo" [ref=f2e11]
+      - img "logo" [ref=f2e13]
+    - navigation [ref=f2e14]:
+      - button " Toggle navigation" [ref=f2e16] [cursor=pointer]:
+        - text: 
+        - generic [ref=f2e17]: Toggle navigation
+      - heading "Профиль Д / Инженер по план формирования" [level=3] [ref=f2e19]
+      - generic [ref=f2e20]:
+        - list:
+          - list [ref=f2e22]:
+            - listitem [ref=f2e23]:
+              - link "" [ref=f2e24] [cursor=pointer]:
+                - /url: "#"
+              - list:
+                - listitem: Последние уведомления
+                - listitem:
+                  - list
+                - listitem:
+                  - link "Все уведомления":
+                    - /url: /ed/Home/ListNotif
+          - list [ref=f2e27]:
+            - listitem [ref=f2e28]:
+              - link "" [ref=f2e29] [cursor=pointer]:
+                - /url: /ed/Home/Forums
+          - list [ref=f2e32]:
+            - listitem [ref=f2e33]:
+              - link "" [ref=f2e34] [cursor=pointer]:
+                - /url: "#"
+              - list:
+                - listitem: Последние новости
+                - listitem:
+                  - list
+                - listitem:
+                  - link "Все новости":
+                    - /url: "#"
+                  - link "Создать новость":
+                    - /url: "#"
+          - list [ref=f2e37]:
+            - listitem [ref=f2e38]:
+              - link "" [ref=f2e39] [cursor=pointer]:
+                - /url: /ed/Home/FAQ
+  - complementary [ref=f2e41]:
+    - list [ref=f2e43]:
+      - listitem [ref=f2e44]:
+        - link [ref=f2e45] [cursor=pointer]:
+          - /url: /ed
+          - img "user" [ref=f2e46]
+          - text: Ботиров Ҳакимжон Боходир ўғли (32505920201555)
+      - listitem [ref=f2e47]:
+        - link " План фор-я " [ref=f2e48] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f2e49]: 
+          - text: План фор-я
+          - generic [ref=f2e50]: 
+        - text:     
+      - listitem [ref=f2e52]:
+        - link " ИНСТРУКЦИЯ" [ref=f2e53] [cursor=pointer]:
+          - /url: /ed/Home/FAQ
+          - generic [ref=f2e54]: 
+          - text: ИНСТРУКЦИЯ
+      - listitem [ref=f2e55]:
+        - link " КОНТАКТЫ" [ref=f2e56] [cursor=pointer]:
+          - /url: /ed/Home/Contacts
+          - generic [ref=f2e57]: 
+          - text: КОНТАКТЫ
+      - listitem [ref=f2e58]:
+        - link " ПРОФИЛЬ " [ref=f2e59] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f2e60]: 
+          - text: ПРОФИЛЬ
+          - generic [ref=f2e61]: 
+        - text: 
+      - listitem [ref=f2e63]:
+        - link " ВЫЙТИ" [ref=f2e64] [cursor=pointer]:
+          - /url: /ed/Logout?Length=4
+          - generic [ref=f2e65]: 
+          - text: ВЫЙТИ
+  - paragraph [ref=f2e69]:
+    - text: Чтобы активировать ваш профиль, пожалуйста, введите
+    - generic [ref=f2e70] [cursor=pointer]: ИНН
+  - contentinfo [ref=f2e72]:
+    - list [ref=f2e74]:
+      - listitem [ref=f2e75]:
+        - link "FAQ" [ref=f2e76] [cursor=pointer]:
+          - /url: /ed/Home/FAQ
+    - text: © 2020-2026
+    - link "АО «Узбекистон темир йуллари»." [ref=f2e77] [cursor=pointer]:
+      - /url: "#"
+  - complementary [ref=f2e78]

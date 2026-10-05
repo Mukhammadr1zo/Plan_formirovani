@@ -1,0 +1,136 @@
+- generic [ref=f3e6]:
+  - banner [ref=f3e7]:
+    - link [ref=f3e8] [cursor=pointer]:
+      - /url: /ed
+      - img "logo" [ref=f3e11]
+      - img "logo" [ref=f3e13]
+    - navigation [ref=f3e14]:
+      - button " Toggle navigation" [ref=f3e16] [cursor=pointer]:
+        - text: 
+        - generic [ref=f3e17]: Toggle navigation
+      - heading "Профиль Д / Инженер по план формирования" [level=3] [ref=f3e19]
+      - generic [ref=f3e20]:
+        - list:
+          - list [ref=f3e22]:
+            - listitem [ref=f3e23]:
+              - link "" [ref=f3e24] [cursor=pointer]:
+                - /url: "#"
+              - list:
+                - listitem: Последние уведомления
+                - listitem:
+                  - list
+                - listitem:
+                  - link "Все уведомления":
+                    - /url: /ed/Home/ListNotif
+          - list [ref=f3e27]:
+            - listitem [ref=f3e28]:
+              - link "" [ref=f3e29] [cursor=pointer]:
+                - /url: /ed/Home/Forums
+          - list [ref=f3e32]:
+            - listitem [ref=f3e33]:
+              - link "" [ref=f3e34] [cursor=pointer]:
+                - /url: "#"
+              - list:
+                - listitem: Последние новости
+                - listitem:
+                  - list
+                - listitem:
+                  - link "Все новости":
+                    - /url: "#"
+                  - link "Создать новость":
+                    - /url: "#"
+          - list [ref=f3e37]:
+            - listitem [ref=f3e38]:
+              - link "" [ref=f3e39] [cursor=pointer]:
+                - /url: /ed/Home/FAQ
+  - complementary [ref=f3e41]:
+    - list [ref=f3e43]:
+      - listitem [ref=f3e44]:
+        - link [ref=f3e45] [cursor=pointer]:
+          - /url: /ed
+          - img "user" [ref=f3e46]
+          - text: Ботиров Ҳакимжон Боходир ўғли (32505920201555)
+      - listitem [ref=f3e47]:
+        - link " План фор-я " [ref=f3e48] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f3e49]: 
+          - text: План фор-я
+          - generic [ref=f3e50]: 
+        - text:     
+      - listitem [ref=f3e52]:
+        - link " ИНСТРУКЦИЯ" [ref=f3e53] [cursor=pointer]:
+          - /url: /ed/Home/FAQ
+          - generic [ref=f3e54]: 
+          - text: ИНСТРУКЦИЯ
+      - listitem [ref=f3e55]:
+        - link " КОНТАКТЫ" [ref=f3e56] [cursor=pointer]:
+          - /url: /ed/Home/Contacts
+          - generic [ref=f3e57]: 
+          - text: КОНТАКТЫ
+      - listitem [ref=f3e58]:
+        - link " ПРОФИЛЬ " [ref=f3e59] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f3e60]: 
+          - text: ПРОФИЛЬ
+          - generic [ref=f3e61]: 
+        - text: 
+      - listitem [ref=f3e63]:
+        - link " ВЫЙТИ" [ref=f3e64] [cursor=pointer]:
+          - /url: /ed/Logout?Length=4
+          - generic [ref=f3e65]: 
+          - text: ВЫЙТИ
+  - generic [ref=f3e66]:
+    - paragraph [ref=f3e69]:
+      - text: Чтобы активировать ваш профиль, пожалуйста, введите
+      - generic [ref=f3e70] [cursor=pointer]: ИНН
+    - generic [ref=f3e72]:
+      - heading "Список Маршурты" [level=3] [ref=f3e74]
+      - generic [ref=f3e75]:
+        - generic [ref=f3e76]:
+          - link " Создать" [ref=f3e78] [cursor=pointer]:
+            - /url: /ed/Marshurt/CreatePlanExport
+            - generic [ref=f3e79]: 
+            - text: Создать
+          - generic [ref=f3e80]:
+            - generic [ref=f3e81]: Отделения
+            - combobox [ref=f3e82]
+            - combobox "Все" [ref=f3e85] [cursor=pointer]
+        - generic [ref=f3e88]:
+          - generic [ref=f3e90]:
+            - text: Показать
+            - combobox "Показать записей" [ref=f3e91]:
+              - option "10" [selected]
+              - option "25"
+              - option "50"
+              - option "100"
+            - text: записей
+          - generic [ref=f3e93]:
+            - text: Поиск
+            - searchbox "Поиск из таблиц" [ref=f3e94]
+            - text: из таблиц
+          - generic [ref=f3e95]: Обработка
+          - grid [ref=f3e96]:
+            - rowgroup [ref=f3e97]:
+              - row [ref=f3e98]:
+                - columnheader "↑ № ↓" [ref=f3e99] [cursor=pointer]
+                - columnheader "↑ От. Страна ↓" [ref=f3e100] [cursor=pointer]
+                - columnheader "От. Старт Станция" [ref=f3e101]
+                - columnheader "От. Завершен Станция" [ref=f3e102]
+                - columnheader "Отделения" [ref=f3e103]
+                - columnheader "↑ Пр. Страна ↓" [ref=f3e104] [cursor=pointer]
+                - columnheader "Пр. Старт Станция" [ref=f3e105]
+                - columnheader "Пр. Завершен Станция" [ref=f3e106]
+                - columnheader "Пункты" [ref=f3e107]
+                - columnheader "Отметка" [ref=f3e108]
+                - columnheader "Действия" [ref=f3e109]
+            - rowgroup
+          - status
+  - contentinfo [ref=f3e110]:
+    - list [ref=f3e112]:
+      - listitem [ref=f3e113]:
+        - link "FAQ" [ref=f3e114] [cursor=pointer]:
+          - /url: /ed/Home/FAQ
+    - text: © 2020-2026
+    - link "АО «Узбекистон темир йуллари»." [ref=f3e115] [cursor=pointer]:
+      - /url: "#"
+  - complementary [ref=f3e116]

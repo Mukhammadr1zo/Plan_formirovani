@@ -1,0 +1,40 @@
+[    1367ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://e-nakl.railway.uz/Login/?redirect_uri=https://e-nakl.railway.uz/ed/home/workplace/:0
+[    3596ms] [ERROR] WebSocket connection to 'wss://127.0.0.1:64443/service/cryptapi' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ https://e-nakl.railway.uz/assets/e_imzo/js/e-imzo.js:214
+[   60709ms] EvalError: Evaluating a string as JavaScript violates the following Content Security Policy directive because 'unsafe-eval' is not an allowed source of script: script-src 'self' 'unsafe-inline' https://api-maps.yandex.ru https://yastatic.net https://cdnjs.cloudflare.com".
+
+    at new Function (<anonymous>)
+    at new t (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:53:8244)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:39:7154)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:47:17136)
+    at e (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:29:352)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:11291)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:12393)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:12406)
+    at e (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:29:352)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:10349)
+[   61646ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://e-nakl.railway.uz/ed/Marshurt/Get_count_Gu12:0
+[  127072ms] EvalError: Evaluating a string as JavaScript violates the following Content Security Policy directive because 'unsafe-eval' is not an allowed source of script: script-src 'self' 'unsafe-inline' https://api-maps.yandex.ru https://yastatic.net https://cdnjs.cloudflare.com".
+
+    at new Function (<anonymous>)
+    at new t (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:53:8244)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:39:7154)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:47:17136)
+    at e (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:29:352)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:11291)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:12393)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:12406)
+    at e (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:29:352)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:10349)
+[  132698ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://e-nakl.railway.uz/ed/Marshurt/Get_count_Gu12:0
+[  355428ms] [ERROR] Failed to load resource: the server responded with a status of 500 () @ chrome-error://chromewebdata/:0
+[  405260ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://e-nakl.railway.uz/Login:0
+[  407226ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://e-nakl.railway.uz/Login/?redirect_uri=https://e-nakl.railway.uz/ed/home/workplace/:0
+[  409270ms] [ERROR] WebSocket connection to 'wss://127.0.0.1:64443/service/cryptapi' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ https://e-nakl.railway.uz/assets/e_imzo/js/e-imzo.js:214
+[  500816ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://e-nakl.railway.uz/Login:0
+[  502864ms] [ERROR] WebSocket connection to 'wss://127.0.0.1:64443/service/cryptapi' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ https://e-nakl.railway.uz/assets/e_imzo/js/e-imzo.js:214
+[  565625ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://e-nakl.railway.uz/Login/?redirect_uri=https://e-nakl.railway.uz/ed/home/workplace/:0
+[  567775ms] [ERROR] WebSocket connection to 'wss://127.0.0.1:64443/service/cryptapi' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ https://e-nakl.railway.uz/assets/e_imzo/js/e-imzo.js:214
+[  670031ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://e-nakl.railway.uz/Login:0
+[  672087ms] [ERROR] WebSocket connection to 'wss://127.0.0.1:64443/service/cryptapi' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ https://e-nakl.railway.uz/assets/e_imzo/js/e-imzo.js:214
+[  778944ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://e-nakl.railway.uz/Login:0
+[  780997ms] [ERROR] WebSocket connection to 'wss://127.0.0.1:64443/service/cryptapi' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ https://e-nakl.railway.uz/assets/e_imzo/js/e-imzo.js:214

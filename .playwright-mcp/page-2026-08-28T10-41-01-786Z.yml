@@ -1,0 +1,164 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e4]:
+      - link " Назад" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e6]: 
+        - generic [ref=e8]: Назад
+      - img "O‘zbekiston temir yo‘llari" [ref=e10]
+      - generic [ref=e11]:
+        - heading "Вход" [level=1] [ref=e12]
+        - paragraph [ref=e13]: Мы рады вашему возвращению!
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - generic [ref=e16]: ИНН или ПИНФЛ или Логин
+          - generic [ref=e17]:
+            - generic: 
+            - textbox "ИНН или ПИНФЛ или Логин" [ref=e18]
+        - generic [ref=e19]:
+          - generic [ref=e20]: Пароль
+          - generic [ref=e21]:
+            - generic: 
+            - textbox "Пароль" [ref=e22]
+            - button "Parolni ko'rsatish" [ref=e23] [cursor=pointer]:
+              - generic [ref=e24]: 
+        - generic [ref=e25]:
+          - generic [ref=e26]: Введите код с картинки
+          - generic [ref=e27]:
+            - textbox "Введите код с картинки" [ref=e28]
+            - img "captcha" [ref=e30] [cursor=pointer]
+        - generic [ref=e31]:
+          - checkbox "Запомнить меня" [ref=e32]
+          - generic [ref=e33]: Запомнить меня
+        - button "Вход" [ref=e34] [cursor=pointer]
+        - generic [ref=e35]:
+          - link "Зарегистрироваться" [ref=e36] [cursor=pointer]:
+            - /url: /Registration
+          - link "Забыли пароль?" [ref=e37] [cursor=pointer]:
+            - /url: /Login/ForGot
+        - generic [ref=e38]:
+          - generic [ref=e39]: Войти с помощью
+          - generic [ref=e43]:
+            - link "ESI.uz" [ref=e44] [cursor=pointer]:
+              - /url: /Home/Login_esi
+            - link [ref=e45] [cursor=pointer]:
+              - /url: /Registration/LoginOneID
+              - img "OneID" [ref=e46]
+              - text: OneID
+            - link "E-imzo" [ref=e47] [cursor=pointer]:
+              - /url: "#"
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - group "1 / 3" [ref=e52]:
+          - generic [ref=e53]:
+            - img "OneID" [ref=e55]
+            - heading "Вход с помощью ONE ID" [level=2] [ref=e56]
+            - paragraph [ref=e57]: Вы можете использовать OneID для входа
+            - generic [ref=e58]:
+              - link "ONE ID" [ref=e59] [cursor=pointer]:
+                - /url: /Registration/LoginOneID
+              - link "E-IMZO" [ref=e60] [cursor=pointer]:
+                - /url: "#"
+              - link "ESI.UZ" [ref=e61] [cursor=pointer]:
+                - /url: /Home/Login_esi
+        - group "2 / 3" [ref=e62]:
+          - generic [ref=e63]:
+            - img "E-Imzo" [ref=e65]
+            - heading "Вход с помощью E-IMZO" [level=2] [ref=e66]
+            - paragraph [ref=e67]: Вы можете использовать E-Imzo для входа
+            - generic [ref=e68]:
+              - link "ONE ID" [ref=e69] [cursor=pointer]:
+                - /url: /Registration/LoginOneID
+              - link "E-IMZO" [ref=e70] [cursor=pointer]:
+                - /url: "#"
+              - link "ESI.UZ" [ref=e71] [cursor=pointer]:
+                - /url: /Home/Login_esi
+        - group "3 / 3" [ref=e72]:
+          - generic [ref=e73]:
+            - img "ESI.UZ" [ref=e75]
+            - heading "Вход через ESI.UZ" [level=2] [ref=e76]
+            - paragraph [ref=e77]: Единая точка доступа к электронным госуслугам и идентификации пользователей
+            - generic [ref=e78]:
+              - link "ONE ID" [ref=e79] [cursor=pointer]:
+                - /url: /Registration/LoginOneID
+              - link "E-IMZO" [ref=e80] [cursor=pointer]:
+                - /url: "#"
+              - link "ESI.UZ" [ref=e81] [cursor=pointer]:
+                - /url: /Home/Login_esi
+        - group "1 / 3" [ref=e82]:
+          - generic [ref=e83]:
+            - img "OneID" [ref=e85]
+            - heading "Вход с помощью ONE ID" [level=2] [ref=e86]
+            - paragraph [ref=e87]: Вы можете использовать OneID для входа
+            - generic [ref=e88]:
+              - link "ONE ID" [ref=e89] [cursor=pointer]:
+                - /url: /Registration/LoginOneID
+              - link "E-IMZO" [ref=e90] [cursor=pointer]:
+                - /url: "#"
+              - link "ESI.UZ" [ref=e91] [cursor=pointer]:
+                - /url: /Home/Login_esi
+        - group "2 / 3" [ref=e92]:
+          - generic [ref=e93]:
+            - img "E-Imzo" [ref=e95]
+            - heading "Вход с помощью E-IMZO" [level=2] [ref=e96]
+            - paragraph [ref=e97]: Вы можете использовать E-Imzo для входа
+            - generic [ref=e98]:
+              - link "ONE ID" [ref=e99] [cursor=pointer]:
+                - /url: /Registration/LoginOneID
+              - link "E-IMZO" [ref=e100] [cursor=pointer]:
+                - /url: "#"
+              - link "ESI.UZ" [ref=e101] [cursor=pointer]:
+                - /url: /Home/Login_esi
+        - group "3 / 3" [ref=e102]:
+          - generic [ref=e103]:
+            - img "ESI.UZ" [ref=e105]
+            - heading "Вход через ESI.UZ" [level=2] [ref=e106]
+            - paragraph [ref=e107]: Единая точка доступа к электронным госуслугам и идентификации пользователей
+            - generic [ref=e108]:
+              - link "ONE ID" [ref=e109] [cursor=pointer]:
+                - /url: /Registration/LoginOneID
+              - link "E-IMZO" [ref=e110] [cursor=pointer]:
+                - /url: "#"
+              - link "ESI.UZ" [ref=e111] [cursor=pointer]:
+                - /url: /Home/Login_esi
+        - group "1 / 3" [ref=e112]:
+          - generic [ref=e113]:
+            - img "OneID" [ref=e115]
+            - heading "Вход с помощью ONE ID" [level=2] [ref=e116]
+            - paragraph [ref=e117]: Вы можете использовать OneID для входа
+            - generic [ref=e118]:
+              - link "ONE ID" [ref=e119] [cursor=pointer]:
+                - /url: /Registration/LoginOneID
+              - link "E-IMZO" [ref=e120] [cursor=pointer]:
+                - /url: "#"
+              - link "ESI.UZ" [ref=e121] [cursor=pointer]:
+                - /url: /Home/Login_esi
+        - group "2 / 3" [ref=e122]:
+          - generic [ref=e123]:
+            - img "E-Imzo" [ref=e125]
+            - heading "Вход с помощью E-IMZO" [level=2] [ref=e126]
+            - paragraph [ref=e127]: Вы можете использовать E-Imzo для входа
+            - generic [ref=e128]:
+              - link "ONE ID" [ref=e129] [cursor=pointer]:
+                - /url: /Registration/LoginOneID
+              - link "E-IMZO" [ref=e130] [cursor=pointer]:
+                - /url: "#"
+              - link "ESI.UZ" [ref=e131] [cursor=pointer]:
+                - /url: /Home/Login_esi
+        - group "3 / 3" [ref=e132]:
+          - generic [ref=e133]:
+            - img "ESI.UZ" [ref=e135]
+            - heading "Вход через ESI.UZ" [level=2] [ref=e136]
+            - paragraph [ref=e137]: Единая точка доступа к электронным госуслугам и идентификации пользователей
+            - generic [ref=e138]:
+              - link "ONE ID" [ref=e139] [cursor=pointer]:
+                - /url: /Registration/LoginOneID
+              - link "E-IMZO" [ref=e140] [cursor=pointer]:
+                - /url: "#"
+              - link "ESI.UZ" [ref=e141] [cursor=pointer]:
+                - /url: /Home/Login_esi
+      - generic [ref=e142]:
+        - button "Go to slide 1" [ref=e143] [cursor=pointer]
+        - button "Go to slide 2" [ref=e144] [cursor=pointer]
+        - button "Go to slide 3" [ref=e145] [cursor=pointer]
+  - text:    

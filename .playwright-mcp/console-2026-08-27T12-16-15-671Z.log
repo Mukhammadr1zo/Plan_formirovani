@@ -1,0 +1,4 @@
+[    2879ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://e-nakl.railway.uz/Login/?redirect_uri=https://e-nakl.railway.uz/ed/home/workplace/:0
+[    6037ms] [ERROR] WebSocket connection to 'wss://127.0.0.1:64443/service/cryptapi' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ https://e-nakl.railway.uz/assets/e_imzo/js/e-imzo.js:214
+[   79999ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://e-nakl.railway.uz/Login:0
+[   82254ms] [ERROR] WebSocket connection to 'wss://127.0.0.1:64443/service/cryptapi' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ https://e-nakl.railway.uz/assets/e_imzo/js/e-imzo.js:214

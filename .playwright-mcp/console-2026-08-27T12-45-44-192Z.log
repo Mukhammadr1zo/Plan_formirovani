@@ -1,0 +1,54 @@
+[     271ms] EvalError: Evaluating a string as JavaScript violates the following Content Security Policy directive because 'unsafe-eval' is not an allowed source of script: script-src 'self' 'unsafe-inline' https://api-maps.yandex.ru https://yastatic.net https://cdnjs.cloudflare.com".
+
+    at new Function (<anonymous>)
+    at new t (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:53:8244)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:39:7154)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:47:17136)
+    at e (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:29:352)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:11291)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:12393)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:12406)
+    at e (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:29:352)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:10349)
+[     386ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://e-nakl.railway.uz/ed/Marshurt/Get_count_Gu12:0
+[   15120ms] [ERROR] Connecting to 'http://localhost:0/never' violates the following Content Security Policy directive: "connect-src 'self' wss: https://emm.railway.uz https://cdnjs.cloudflare.com". The action has been blocked. @ :0
+[   15120ms] [ERROR] Fetch API cannot load http://localhost:0/never. Refused to connect because it violates the document's Content Security Policy. @ :0
+[  649381ms] EvalError: Evaluating a string as JavaScript violates the following Content Security Policy directive because 'unsafe-eval' is not an allowed source of script: script-src 'self' 'unsafe-inline' https://api-maps.yandex.ru https://yastatic.net https://cdnjs.cloudflare.com".
+
+    at new Function (<anonymous>)
+    at new t (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:53:8244)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:39:7154)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:47:17136)
+    at e (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:29:352)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:11291)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:12393)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:12406)
+    at e (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:29:352)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:10349)
+[  649435ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://e-nakl.railway.uz/ed/Marshurt/Get_count_Gu12:0
+[ 1663155ms] EvalError: Evaluating a string as JavaScript violates the following Content Security Policy directive because 'unsafe-eval' is not an allowed source of script: script-src 'self' 'unsafe-inline' https://api-maps.yandex.ru https://yastatic.net https://cdnjs.cloudflare.com".
+
+    at new Function (<anonymous>)
+    at new t (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:53:8244)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:39:7154)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:47:17136)
+    at e (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:29:352)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:11291)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:12393)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:12406)
+    at e (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:29:352)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:10349)
+[ 1663222ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://e-nakl.railway.uz/ed/Marshurt/Get_count_Gu12:0
+[ 1754554ms] EvalError: Evaluating a string as JavaScript violates the following Content Security Policy directive because 'unsafe-eval' is not an allowed source of script: script-src 'self' 'unsafe-inline' https://api-maps.yandex.ru https://yastatic.net https://cdnjs.cloudflare.com".
+
+    at new Function (<anonymous>)
+    at new t (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:53:8244)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:39:7154)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:47:17136)
+    at e (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:29:352)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:11291)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:12393)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:12406)
+    at e (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:29:352)
+    at Object.<anonymous> (https://e-nakl.railway.uz/ed/assets/vendor_components/datatable/datatables.min.js:38:10349)
+[ 1754623ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://e-nakl.railway.uz/ed/Marshurt/Get_count_Gu12:0

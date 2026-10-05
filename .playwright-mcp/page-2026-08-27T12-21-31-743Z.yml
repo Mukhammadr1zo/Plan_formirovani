@@ -1,0 +1,186 @@
+- generic [ref=f4e6]:
+  - banner [ref=f4e7]:
+    - link [ref=f4e8] [cursor=pointer]:
+      - /url: /ed
+      - img "logo" [ref=f4e11]
+      - img "logo" [ref=f4e13]
+    - navigation [ref=f4e14]:
+      - button " Toggle navigation" [ref=f4e16] [cursor=pointer]:
+        - text: 
+        - generic [ref=f4e17]: Toggle navigation
+      - heading "Профиль Д / Инженер по план формирования" [level=3] [ref=f4e19]
+      - generic [ref=f4e20]:
+        - list:
+          - list [ref=f4e22]:
+            - listitem [ref=f4e23]:
+              - link "" [ref=f4e24] [cursor=pointer]:
+                - /url: "#"
+              - list:
+                - listitem: Последние уведомления
+                - listitem:
+                  - list
+                - listitem:
+                  - link "Все уведомления":
+                    - /url: /ed/Home/ListNotif
+          - list [ref=f4e27]:
+            - listitem [ref=f4e28]:
+              - link "" [ref=f4e29] [cursor=pointer]:
+                - /url: /ed/Home/Forums
+          - list [ref=f4e32]:
+            - listitem [ref=f4e33]:
+              - link "" [ref=f4e34] [cursor=pointer]:
+                - /url: "#"
+              - list:
+                - listitem: Последние новости
+                - listitem:
+                  - list
+                - listitem:
+                  - link "Все новости":
+                    - /url: "#"
+                  - link "Создать новость":
+                    - /url: "#"
+          - list [ref=f4e37]:
+            - listitem [ref=f4e38]:
+              - link "" [ref=f4e39] [cursor=pointer]:
+                - /url: /ed/Home/FAQ
+  - complementary [ref=f4e41]:
+    - list [ref=f4e43]:
+      - listitem [ref=f4e44]:
+        - link [ref=f4e45] [cursor=pointer]:
+          - /url: /ed
+          - img "user" [ref=f4e46]
+          - text: Ботиров Ҳакимжон Боходир ўғли (32505920201555)
+      - listitem [ref=f4e47]:
+        - link " План фор-я " [ref=f4e48] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f4e49]: 
+          - text: План фор-я
+          - generic [ref=f4e50]: 
+        - text:     
+      - listitem [ref=f4e52]:
+        - link " ИНСТРУКЦИЯ" [ref=f4e53] [cursor=pointer]:
+          - /url: /ed/Home/FAQ
+          - generic [ref=f4e54]: 
+          - text: ИНСТРУКЦИЯ
+      - listitem [ref=f4e55]:
+        - link " КОНТАКТЫ" [ref=f4e56] [cursor=pointer]:
+          - /url: /ed/Home/Contacts
+          - generic [ref=f4e57]: 
+          - text: КОНТАКТЫ
+      - listitem [ref=f4e58]:
+        - link " ПРОФИЛЬ " [ref=f4e59] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f4e60]: 
+          - text: ПРОФИЛЬ
+          - generic [ref=f4e61]: 
+        - text: 
+      - listitem [ref=f4e63]:
+        - link " ВЫЙТИ" [ref=f4e64] [cursor=pointer]:
+          - /url: /ed/Logout?Length=4
+          - generic [ref=f4e65]: 
+          - text: ВЫЙТИ
+  - generic [ref=f4e66]:
+    - paragraph [ref=f4e69]:
+      - text: Чтобы активировать ваш профиль, пожалуйста, введите
+      - generic [ref=f4e70] [cursor=pointer]: ИНН
+    - generic [ref=f4e71]:
+      - generic [ref=f4e72]:
+        - heading "Добавит Экспорт Маршурт" [level=3] [ref=f4e74]
+        - generic [ref=f4e75]:
+          - generic [ref=f4e76]:
+            - generic [ref=f4e77]:
+              - generic [ref=f4e79]:
+                - generic [ref=f4e80]: Отправить Страна Код
+                - combobox [ref=f4e81]
+                - combobox "29 - УТИ" [ref=f4e84] [cursor=pointer]
+              - generic [ref=f4e87]:
+                - generic [ref=f4e88]: Отделения
+                - combobox [ref=f4e89]
+                - combobox "6 - АО \"Темирйўлинфратузилма\" Термезский железнодорожный узел" [ref=f4e92] [cursor=pointer]
+              - generic [ref=f4e95]:
+                - generic [ref=f4e96]: Получить Страна Код
+                - combobox [ref=f4e97]
+                - combobox "20 - РЖД" [ref=f4e100] [cursor=pointer]
+            - generic [ref=f4e102]:
+              - generic [ref=f4e104]:
+                - generic [ref=f4e105]: Отправить Станцию Начало
+                - combobox [ref=f4e106]
+                - combobox "73650" [ref=f4e109] [cursor=pointer]
+              - generic [ref=f4e113]:
+                - generic [ref=f4e114]: Приема Станцию Начало
+                - combobox [ref=f4e115]
+                - combobox "60870" [ref=f4e118] [cursor=pointer]
+            - generic [ref=f4e120]:
+              - generic [ref=f4e122]:
+                - generic [ref=f4e123]: Отправить Конец Станции
+                - combobox [ref=f4e124]
+                - combobox "73670" [ref=f4e127] [cursor=pointer]
+              - generic [ref=f4e131]:
+                - generic [ref=f4e132]: Приема Конец Станции
+                - combobox [ref=f4e133]
+                - combobox "60870" [ref=f4e136] [cursor=pointer]
+            - separator [ref=f4e138]
+            - generic [ref=f4e140]:
+              - button " Добавить" [ref=f4e142] [cursor=pointer]:
+                - generic [ref=f4e143]: 
+                - text: Добавить
+              - generic [ref=f4e144]:
+                - generic [ref=f4e146]:
+                  - text: Показать
+                  - combobox "Показать записей" [ref=f4e147]:
+                    - option "10" [selected]
+                    - option "25"
+                    - option "50"
+                    - option "100"
+                  - text: записей
+                - generic [ref=f4e149]:
+                  - text: Поиск
+                  - searchbox "Поиск из таблиц" [ref=f4e150]
+                  - text: из таблиц
+                - grid [ref=f4e151]:
+                  - rowgroup [ref=f4e152]:
+                    - row [ref=f4e153]:
+                      - 'columnheader "№: activate to sort column ascending" [ref=f4e154] [cursor=pointer]': №
+                      - 'columnheader "Страна: activate to sort column ascending" [ref=f4e155] [cursor=pointer]': Страна
+                      - 'columnheader "Станция: activate to sort column ascending" [ref=f4e156] [cursor=pointer]': Станция
+                      - columnheader "Действия" [ref=f4e157]
+                  - rowgroup [ref=f4e158]:
+                    - row [ref=f4e159]:
+                      - gridcell "2" [ref=f4e160]
+                      - gridcell "29" [ref=f4e161]
+                      - gridcell "736808" [ref=f4e162]
+                      - gridcell [ref=f4e163]:
+                        - generic [ref=f4e164]:
+                          - button "" [ref=f4e165] [cursor=pointer]
+                          - button "" [ref=f4e167] [cursor=pointer]
+                    - row [ref=f4e169]:
+                      - gridcell "1" [ref=f4e170]
+                      - gridcell "27" [ref=f4e171]
+                      - gridcell "662002" [ref=f4e172]
+                      - gridcell [ref=f4e173]:
+                        - generic [ref=f4e174]:
+                          - button "" [ref=f4e175] [cursor=pointer]
+                          - button "" [ref=f4e177] [cursor=pointer]
+                - status [ref=f4e179]: Показано от 1 до 2 из 2 записей
+                - generic [ref=f4e180]:
+                  - generic [ref=f4e181]: предыдущий
+                  - generic [ref=f4e182]: "1"
+                  - generic [ref=f4e184]: следующий
+          - generic [ref=f4e185]:
+            - link " Отмена" [ref=f4e186] [cursor=pointer]:
+              - /url: /ed/Marshurt/ListPlanExport
+              - generic [ref=f4e187]: 
+              - text: Отмена
+            - button " Сохранить" [ref=f4e188] [cursor=pointer]:
+              - generic [ref=f4e189]: 
+              - text: Сохранить
+      - text:  
+  - contentinfo [ref=f4e190]:
+    - list [ref=f4e192]:
+      - listitem [ref=f4e193]:
+        - link "FAQ" [ref=f4e194] [cursor=pointer]:
+          - /url: /ed/Home/FAQ
+    - text: © 2020-2026
+    - link "АО «Узбекистон темир йуллари»." [ref=f4e195] [cursor=pointer]:
+      - /url: "#"
+  - complementary [ref=f4e196]

@@ -1,0 +1,536 @@
+<title>Аудит e-nakl по Книге 3</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=PT+Sans:wght@400;700&family=PT+Mono&display=swap">
+<style>
+  :root {
+    --paper: #f6f8fa;
+    --surface: #ffffff;
+    --ink: #1c2733;
+    --ink-2: #4a5866;
+    --muted: #7a8794;
+    --accent: #24507c;
+    --accent-ink: #ffffff;
+    --hairline: #dde4ec;
+    --good: #0ca30c;
+    --warn: #fab219;
+    --crit: #d03b3b;
+    --good-bg: #e9f6e9;
+    --warn-bg: #fdf3d9;
+    --crit-bg: #fbe7e7;
+    --chip-bg: #eef2f7;
+    --code-bg: #eef2f7;
+    --note-bg: #e9e4f9;
+    --note-ink: #5636b8;
+    --appr-bg: #dff2f0;
+    --appr-ink: #0d6e66;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #12181f;
+      --surface: #1a222c;
+      --ink: #e6edf5;
+      --ink-2: #aab8c5;
+      --muted: #7a8794;
+      --accent: #7aa7d9;
+      --accent-ink: #0f1722;
+      --hairline: #2b3745;
+      --good-bg: #16301a;
+      --warn-bg: #33290f;
+      --crit-bg: #371a1a;
+      --chip-bg: #232e3a;
+      --code-bg: #232e3a;
+      --note-bg: #262040;
+      --note-ink: #b3a3ef;
+      --appr-bg: #123430;
+      --appr-ink: #7fd4c8;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #12181f;
+    --surface: #1a222c;
+    --ink: #e6edf5;
+    --ink-2: #aab8c5;
+    --muted: #7a8794;
+    --accent: #7aa7d9;
+    --accent-ink: #0f1722;
+    --hairline: #2b3745;
+    --good-bg: #16301a;
+    --warn-bg: #33290f;
+    --crit-bg: #371a1a;
+    --chip-bg: #232e3a;
+    --code-bg: #232e3a;
+    --note-bg: #262040;
+    --note-ink: #b3a3ef;
+    --appr-bg: #123430;
+    --appr-ink: #7fd4c8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "PT Sans", "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    margin: 0;
+    padding: 0 20px 80px;
+  }
+  .page { max-width: 920px; margin: 0 auto; }
+
+  /* ---- шапка документа ---- */
+  header.doc {
+    border-bottom: 3px double var(--accent);
+    padding: 44px 0 22px;
+    margin-bottom: 30px;
+  }
+  .eyebrow {
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: "PT Serif", Georgia, serif;
+    font-size: clamp(30px, 5vw, 42px);
+    line-height: 1.12;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px 26px;
+    font-size: 14px;
+  }
+  .meta div { border-left: 2px solid var(--hairline); padding-left: 10px; }
+  .meta b { display: block; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .meta span { font-variant-numeric: tabular-nums; }
+
+  h2 {
+    font-family: "PT Serif", Georgia, serif;
+    font-size: 25px;
+    margin: 46px 0 6px;
+    text-wrap: balance;
+  }
+  h2 + .sub { color: var(--ink-2); margin: 0 0 18px; max-width: 68ch; }
+  h3 { font-size: 17px; margin: 26px 0 8px; }
+  p { max-width: 72ch; }
+  .lead { font-size: 18px; max-width: 68ch; }
+  .lead b.okc { color: var(--good); }
+  code, .code {
+    font-family: "PT Mono", Consolas, monospace;
+    font-size: 0.92em;
+    background: var(--code-bg);
+    border-radius: 4px;
+    padding: 1px 5px;
+  }
+
+  /* ---- плитки ---- */
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 20px 0 14px; }
+  .tile {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    padding: 14px 16px 12px;
+  }
+  .tile .n { font-family: "PT Serif", Georgia, serif; font-size: 34px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+  .tile .l { font-size: 13px; color: var(--ink-2); margin-top: 2px; }
+  .tile .pct { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .tile.good { border-top: 4px solid var(--good); }
+  .tile.warn { border-top: 4px solid var(--warn); }
+  .tile.crit { border-top: 4px solid var(--crit); }
+
+  /* ---- статусная полоса ---- */
+  .statusbar { display: flex; height: 26px; border-radius: 6px; overflow: hidden; gap: 2px; background: var(--paper); margin: 6px 0 8px; }
+  .statusbar div { min-width: 4px; }
+  .sb-good { background: var(--good); flex: 8273; }
+  .sb-warn { background: var(--warn); flex: 215; }
+  .sb-crit { background: var(--crit); flex: 1410; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13.5px; color: var(--ink-2); }
+  .legend i { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+
+  /* ---- таблицы ---- */
+  .twrap { overflow-x: auto; border: 1px solid var(--hairline); border-radius: 8px; background: var(--surface); margin: 16px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+  th {
+    text-align: left; font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--muted); font-weight: 700; padding: 10px 14px; border-bottom: 1px solid var(--hairline);
+    white-space: nowrap;
+  }
+  td { padding: 9px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  td.num { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+  .pill { display: inline-block; font-size: 12px; font-weight: 700; border-radius: 20px; padding: 2px 10px; white-space: nowrap; }
+  .pill.good { background: var(--good-bg); color: var(--good); }
+  .pill.warn { background: var(--warn-bg); color: #8a6400; }
+  :root[data-theme="dark"] .pill.warn { color: var(--warn); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pill.warn { color: var(--warn); } }
+  .pill.crit { background: var(--crit-bg); color: var(--crit); }
+
+  /* ---- цепочки пунктов перехода ---- */
+  .chain { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 6px 0; }
+  .chain .st {
+    font-family: "PT Mono", Consolas, monospace;
+    font-size: 12.5px;
+    background: var(--chip-bg);
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+  .chain .st small { display: block; font-family: "PT Sans", sans-serif; font-size: 10.5px; color: var(--muted); letter-spacing: 0.02em; }
+  .chain .arrow { color: var(--muted); font-size: 14px; }
+  .chain .st.bad { border-color: var(--crit); background: var(--crit-bg); }
+  .chain .st.fix { border-color: var(--good); background: var(--good-bg); }
+  .chainlabel { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); width: 86px; flex-shrink: 0; }
+
+  /* ---- карточки ошибок ---- */
+  .pattern {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    padding: 16px 18px 12px;
+    margin: 14px 0;
+  }
+  .pattern h3 { margin: 0 0 2px; }
+  .pattern h3::before { content: '✗ '; color: var(--crit); }
+  .pattern .count { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+  .pattern .verdict { font-size: 14px; margin: 10px 0 4px; max-width: 75ch; }
+  .verdict b.v-crit { color: var(--crit); }
+  .verdict b.v-warn { color: #8a6400; }
+  :root[data-theme="dark"] .verdict b.v-warn { color: var(--warn); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .verdict b.v-warn { color: var(--warn); } }
+
+  /* ---- карточки компонентов ---- */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin: 18px 0; }
+  .card { background: var(--surface); border: 1px solid var(--hairline); border-radius: 8px; padding: 16px 18px; }
+  .card h3 { margin: 0 0 8px; color: var(--accent); }
+  .card p { font-size: 14.5px; margin: 0 0 8px; }
+  .card .tag { font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+  /* ---- мини-демо таблицы ---- */
+  .demo { border: 1px solid var(--hairline); border-radius: 8px; overflow: hidden; margin: 14px 0; font-size: 13.5px; }
+  .demo .drow { display: grid; grid-template-columns: 56px 1fr 1fr 1.6fr; gap: 0; border-bottom: 1px solid var(--hairline); }
+  .demo .drow:last-child { border-bottom: 0; }
+  .demo .drow > div { padding: 8px 12px; }
+  .demo .dh { background: var(--surface); font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .demo .ok { background: var(--good-bg); }
+  .demo .er { background: var(--crit-bg); }
+  .demo .badge { font-size: 12px; margin-top: 3px; }
+  .demo .ok .badge { color: var(--good); }
+  .demo .er .badge { color: var(--crit); }
+  .demo .mono { font-family: "PT Mono", Consolas, monospace; font-variant-numeric: tabular-nums; }
+
+  ol.steps { padding-left: 22px; max-width: 72ch; }
+  ol.steps li { margin: 8px 0; }
+  ul.tight { padding-left: 20px; max-width: 75ch; }
+  ul.tight li { margin: 6px 0; }
+
+  .note {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 14.5px;
+    max-width: 100%;
+    margin: 18px 0;
+  }
+  .note b.t { color: var(--accent); }
+  footer { margin-top: 56px; border-top: 1px solid var(--hairline); padding-top: 16px; font-size: 13px; color: var(--muted); }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+
+<div class="page">
+<header class="doc">
+  <p class="eyebrow">АО «Ўзбекистон темир йўллари» · План формирования · Служебный документ</p>
+  <h1>Аудит маршрутных планов e-nakl по Книге 3</h1>
+  <div class="meta">
+    <div><b>Источник</b><span>План формирования, Книга 3 (2025-10-23), раздел Узбекских ж.д.</span></div>
+    <div><b>Проверяемая система</b><span>e-nakl.railway.uz — Маршруты / ListPlanExport</span></div>
+    <div><b>Охват</b><span>9 769 записей × 1 043 правила книги + 94 примечания</span></div>
+    <div><b>Дата аудита</b><span>27.08.2026</span></div>
+  </div>
+</header>
+
+<p class="lead">Из 9 769 маршрутных планов на сайте <b class="okc">8 273 (84,7%)</b> соответствуют Книге 3 или допускаются её примечаниями. <b>1 410 записей противоречат книге</b> — но 96% ошибок укладываются всего в четыре повторяющихся шаблона. Это не случайные опечатки, а системные ошибки ввода: вместо проверки по одной записи достаточно исправить четыре группы массово.</p>
+
+<h2>1 · Общая картина</h2>
+<p class="sub">Каждая запись: диапазон отправления + отделение → дорога и диапазон приёма → цепочка пунктов перехода. Всё сверено с таблицами «73 Узбекские ж.д.» (Часть 1 и 2) Книги 3, включая примечания.</p>
+
+<div class="tiles">
+  <div class="tile good"><div class="n">8 273</div><div class="l">✓ Соответствует или допущено примечанием</div><div class="pct">84,7%</div></div>
+  <div class="tile warn"><div class="n">215</div><div class="l">△ Предупреждение (цепочка верна, оформление неточное)</div><div class="pct">2,2%</div></div>
+  <div class="tile crit"><div class="n">1 410</div><div class="l">✗ Противоречит книге — требует исправления</div><div class="pct">14,4%</div></div>
+</div>
+<div class="statusbar" role="img" aria-label="Распределение 9769 записей: 8273 соответствуют, 215 предупреждений, 1410 ошибок">
+  <div class="sb-good" title="Соответствует: 8273"></div><div class="sb-warn" title="Предупреждение: 215"></div><div class="sb-crit" title="Ошибка: 1410"></div>
+</div>
+<div class="legend">
+  <span><i style="background:var(--good)"></i>Соответствует — 8 273</span>
+  <span><i style="background:var(--warn)"></i>Предупреждение — 215</span>
+  <span><i style="background:var(--crit)"></i>Ошибка — 1 410</span>
+</div>
+
+<div class="twrap"><table>
+  <tr><th>Статус</th><th>Кол-во</th><th>Пояснение</th></tr>
+  <tr><td><span class="pill good">OK</span></td><td class="num">8 144</td><td>Точно соответствует правилу книги — можно подтверждать</td></tr>
+  <tr><td><span class="pill good">OK (диапазон неточен)</span></td><td class="num">129</td><td>Цепочка верна, но диапазон приёма не совпадает с разбивкой книги</td></tr>
+  <tr><td><span class="pill warn">По примечанию, частично</span></td><td class="num">86</td><td>Примечание книги допускает маршрут, но на сайте пропущены промежуточные пункты из примечания</td></tr>
+  <tr><td><span class="pill crit">Ошибка цепочки</span></td><td class="num">1 361</td><td>Цепочка пунктов перехода не соответствует книге</td></tr>
+  <tr><td><span class="pill crit">Разделить диапазон</span></td><td class="num">42</td><td>Одна запись пересекает две строки книги с разными цепочками</td></tr>
+  <tr><td><span class="pill crit">Грубая ошибка ввода</span></td><td class="num">7</td><td>Обратный диапазон, 6-значный код, дубликат пункта</td></tr>
+</table></div>
+
+<h2>2 · Четыре системных шаблона ошибок</h2>
+<p class="sub">Почти все 1 361 ошибок цепочек попадают в четыре группы. Каждый шаблон проверен поиском по всему тексту книги (49 таблиц + все примечания).</p>
+
+<div class="pattern">
+  <h3>Локоть вместо Куркамыса</h3>
+  <div class="count">≈1 044 записи · Назначения: Зап.-Сибирская, Красноярская, Вост.-Сибирская, Забайкальская, Дальневосточная, ЖД Якутии</div>
+  <div class="chain"><span class="chainlabel">На сайте</span>
+    <span class="st">72060<small>КЕЛЕС-Э</small></span><span class="arrow">→</span>
+    <span class="st bad">71110<small>ЛОКОТЬ-Э</small></span>
+  </div>
+  <div class="chain"><span class="chainlabel">По книге</span>
+    <span class="st">72060<small>КЕЛЕС-Э</small></span><span class="arrow">→</span>
+    <span class="st fix">69750<small>КУРКАМЫС-Э</small></span>
+  </div>
+  <p class="verdict"><b class="v-crit">870 записей (Ташкентский, Бухарский, Каршинский, Термезский, Кунградский узлы) — противоречат книге:</b> ни основная таблица, ни примечания не дают оснований направлять поток из этих узлов через Локоть. <b class="v-warn">174 записи (Ферганский/Кокандский узел) — допущены примечанием:</b> примечания Части 2 прямо предписывают для Ферганы коридор через Локоть, но на сайте пропущены промежуточные пункты из примечания (Сувонобод 74010, Спитамен 74750).</p>
+</div>
+
+<div class="pattern">
+  <h3>Злынка вместо Красного</h3>
+  <div class="count">≈287 записей · Назначения: Калининградская ж.д., Белорусская ж.д. (Брестское, Барановичское, Минское отд.)</div>
+  <div class="chain"><span class="chainlabel">На сайте</span>
+    <span class="st">73680<small>КАРАКАЛПАКСТАН-Э</small></span><span class="arrow">→</span>
+    <span class="st">66200<small>ДИНЫ НУРПЕИС-Э</small></span><span class="arrow">→</span>
+    <span class="st bad">20120<small>ЗЛЫНКА-Э</small></span>
+  </div>
+  <div class="chain"><span class="chainlabel">По книге</span>
+    <span class="st">73680<small>КАРАКАЛПАКСТАН-Э</small></span><span class="arrow">→</span>
+    <span class="st">66200<small>ДИНЫ НУРПЕИС-Э</small></span><span class="arrow">→</span>
+    <span class="st fix">17140<small>КРАСНОЕ-Э</small></span>
+  </div>
+  <p class="verdict"><b class="v-crit">Противоречит книге.</b> Злынка в книге используется только для Литвы и гомельско-могилёвской стороны БЧ; поток на Калининград и Брест/Минск везде записан через Красное (для Калининграда далее Гудогай 16410 → Кибартай 12440 — эта часть на сайте верна).</p>
+</div>
+
+<div class="pattern">
+  <h3>Печоры-Псковские вместо Ивангорода-Нарвского</h3>
+  <div class="count">65 записей · Назначение: Эстонская ж.д. (08000, 08270–08440, 08860)</div>
+  <div class="chain"><span class="chainlabel">На сайте</span>
+    <span class="st">…</span>
+    <span class="st bad">07720<small>ПЕЧОРЫ-ПСКОВ-Э</small></span>
+  </div>
+  <div class="chain"><span class="chainlabel">По книге</span>
+    <span class="st">…</span>
+    <span class="st fix">07600<small>ИВАНГОРОД-Н-Э</small></span>
+  </div>
+  <p class="verdict"><b class="v-crit">Противоречит книге.</b> Книга делит Эстонию на две части: 08000/08270–08440/08860 — через Ивангород-Нарвский; 08050–08260/08450–08852/08870–08910 — через Печоры-Псковские. На сайте первая группа ошибочно записана на Печоры.</p>
+</div>
+
+<div class="pattern">
+  <h3>Рудня вместо Соловья</h3>
+  <div class="count">30 записей · Назначение: Одесская ж.д.</div>
+  <div class="chain"><span class="chainlabel">На сайте</span>
+    <span class="st">…</span>
+    <span class="st bad">17200<small>РУДНЯ-Э</small></span>
+  </div>
+  <div class="chain"><span class="chainlabel">По книге</span>
+    <span class="st">…</span>
+    <span class="st fix">43970<small>СОЛОВЕЙ-Э</small></span>
+  </div>
+  <p class="verdict"><b class="v-crit">Оснований в книге нет.</b> Все украинские назначения в книге (и таблицы, и примечания) идут через Соловей; Рудня применяется только для Витебского отделения БЧ. Если это сознательное оперативное изменение маршрута — его нужно оформить документально.</p>
+</div>
+
+<h3>Мелкие находки</h3>
+<ul class="tight">
+  <li><b>7 цепочек с перепутанным порядком</b> — пункты верные, но введены в обратной последовательности (например <code>66200, 73680</code> вместо <code>73680, 66200</code>).</li>
+  <li><b>Единичные ошибки</b> — опечатка в коде (<code>73690</code> ≠ <code>73680</code>), обрезанный хвост цепочки (на молдавском направлении не хватает 2 последних пунктов), дубликат пункта.</li>
+</ul>
+
+<h2>3 · Грубые ошибки ввода — 7 записей, исправления готовы</h2>
+<div class="twrap"><table>
+  <tr><th>ID</th><th>Проблема</th><th>Исправление</th></tr>
+  <tr><td class="num">3522, 3536, 3537</td><td>Обратный диапазон отправления: <code>72550–72540</code></td><td>Конец должен быть <code>72690</code> (скопирован конец соседней колонки)</td></tr>
+  <tr><td class="num">10700, 10701</td><td>Обратный диапазон приёма: <code>73820–73800</code> + неверная цепочка</td><td>Удалить — корректные записи (10960, 10961) уже существуют</td></tr>
+  <tr><td class="num">10963</td><td>6-значные коды в полях диапазонов: <code>738108–738803</code>, приём к тому же перевёрнут</td><td>Удалить — точный дубликат записи 5017</td></tr>
+  <tr><td class="num">10966</td><td>6-значные коды + дубликат пункта (<code>2-678405, 2-67840</code>)</td><td>Удалить — точный дубликат записи 5041</td></tr>
+</table></div>
+
+<h2>4 · Несоответствия диапазонов</h2>
+<ul class="tight">
+  <li><b>84000–84460 (36 записей) — реальный конфликт.</b> Книга делит этот интервал: 84000–84320 → через Куркамыс, 84330–84460 → через Локоть. Единая запись на сайте направляет всё через Локоть, то есть часть 84000–84320 планируется вопреки книге. Каждую запись нужно разделить на две.</li>
+  <li><b>67960–68010 и 68890–68900 (Казахстан, 6 реальных конфликтов).</b> Из кунградских отправлений половина интервала должна идти через Каракалпакстан, половина — через Келес; записи нужно разделить. У остальных 36 записей цепочки обеих строк книги совпадают — это лишь вопрос оформления.</li>
+  <li><b>14800 (Беларусь, 36 записей) — пробел в самой книге.</b> Код <code>14800</code> не входит ни в один диапазон книги (Гомельский узел, рядом с 14803). Цепочки всех 36 записей точно совпадают с гомельской строкой — это не ошибка сайта, а пропуск в нумерации книги.</li>
+  <li><b>Внутренние маршруты по Узбекистану (124 записи) — все верны.</b> Транзит через Туркменистан (коридор Дашогуз) и Кыргызстан (коридор Карасу) сверен со специальными строками книги: совпадение 124 из 124.</li>
+</ul>
+
+<h2>5 · Решение: три инструмента</h2>
+<p class="sub">Все три готовы и испытаны. При выходе новой редакции книги пересобирается только файл правил — сами инструменты не меняются.</p>
+
+<div class="cards">
+  <div class="card">
+    <div class="tag">Фундамент</div>
+    <h3>Конвертор книги → JSON</h3>
+    <p>Преобразует раздел Узбекских ж.д. Книги 3 (таблицы Части 1–2: 1 043 правила + 94 примечания) в машиночитаемую базу правил.</p>
+    <p><code>parse_book.py</code></p>
+  </div>
+  <div class="card">
+    <div class="tag">Массовая проверка</div>
+    <h3>Скрипт аудита + Excel-отчёт</h3>
+    <p>Проверяет все 9 769 записей разом и формирует Excel-отчёт по категориям: для каждой ошибки — ожидаемая цепочка, позиция расхождения, названия станций.</p>
+    <p><code>validate.py → AUDIT_OTCHET.xlsx</code></p>
+  </div>
+  <div class="card">
+    <div class="tag">Ежедневная работа</div>
+    <h3>Расширение Chrome</h3>
+    <p>Проверяет каждую строку таблицы ListPlanExport на лету, причина указывается прямо в строке. Кнопки: «Подтвердить соответствующие», «Ошибки в Excel», «Только проблемные».</p>
+    <p><code>enakl-book3-tekshiruvchi.zip</code></p>
+  </div>
+</div>
+
+
+<h3>Как расширение выглядит в таблице</h3>
+<div class="demo">
+  <div class="drow"><div class="dh">№</div><div class="dh">Отправление</div><div class="dh">Приём</div><div class="dh">Пункты + проверка</div></div>
+  <div class="drow ok">
+    <div class="mono">367</div>
+    <div class="mono">73650–73670 · Термезский</div>
+    <div class="mono">РЖД 60870</div>
+    <div><span class="mono">1-736808, 2-662002</span><div class="badge">✓ Соответствует книге</div></div>
+  </div>
+  <div class="drow er">
+    <div class="mono">732</div>
+    <div class="mono">72000–72540 · Ташкентский</div>
+    <div class="mono">РЖД 86060–86410</div>
+    <div><span class="mono">1-720602, 2-711105</span><div class="badge">✗ Цепочка не соответствует книге. По книге: КЕЛЕС-Э (72060) → КУРКАМЫС-Э (69750). Расхождение: поз. 2: ЛОКОТЬ (71110) ≠ КУРКАМЫС (69750)</div></div>
+  </div>
+  <div class="drow" style="background:var(--note-bg)">
+    <div class="mono">5470</div>
+    <div class="mono">74000–74011 · Кокандский</div>
+    <div class="mono">РЖД 88000–89613</div>
+    <div><span class="mono">1-720602, 2-711105</span><div class="badge" style="color:var(--note-ink)">◆ Дополнительный план по Примечанию, но пропущены промежуточные пункты; полная цепочка: Сувонобод (74010) → Спитамен (74750) → Келес (72060) → Локоть (71110)</div></div>
+  </div>
+</div>
+
+<h2>6 · Руководство пользователя</h2>
+<p class="sub">Полная инструкция по работе с расширением — от установки до ежедневной работы.</p>
+
+<h3>6.1 · Установка (один раз на каждом компьютере)</h3>
+<ol class="steps">
+  <li>Распакуйте <code>enakl-book3-tekshiruvchi.zip</code> в постоянную папку, например <code>C:\enakl-tekshiruvchi\</code>. Папку нельзя удалять — Chrome читает расширение из неё.</li>
+  <li>Откройте в Chrome страницу <code>chrome://extensions</code> и включите <b>Режим разработчика</b> (Developer mode, переключатель справа вверху).</li>
+  <li>Нажмите <b>Загрузить распакованное</b> (Load unpacked) и укажите папку из шага 1.</li>
+  <li>Откройте в e-nakl список маршрутов (ListPlanExport) — строки раскрасятся автоматически, слева внизу появится панель. Работает и в Edge (<code>edge://extensions</code>).</li>
+</ol>
+<p>Если Chrome при запуске спрашивает про расширения в режиме разработчика — нажмите «Оставить». Это обычное предупреждение.</p>
+
+<h3>6.2 · Панель: перемещение и сворачивание</h3>
+<ul class="tight">
+  <li><b>Перетаскивание:</b> схватите панель за заголовок «⠿ Проверка по Книге 3» и перетащите в любое место экрана — например, если она закрывает переключение страниц. Позиция запоминается и восстанавливается после перезагрузки.</li>
+  <li><b>Сворачивание:</b> кнопка «—» в заголовке сворачивает панель в круглую кнопку <b>К3</b>. На кнопке красным показывается число ошибок на текущей странице. Клик по кнопке разворачивает панель обратно. Кнопку тоже можно перетаскивать.</li>
+</ul>
+
+<h3>6.3 · Цвета строк</h3>
+<ul class="tight">
+  <li><span class="pill good">Зелёный</span> — соответствует основной таблице книги; можно подтверждать.</li>
+  <li><span class="pill" style="background:var(--note-bg);color:var(--note-ink)">Фиолетовый ◆</span> — <b>дополнительный план</b>: маршрут идёт по Примечанию к строке книги (например, ферганский коридор через Локоть). Если в примечании есть промежуточные пункты, которых нет на сайте — это указывается в строке.</li>
+  <li><span class="pill" style="background:var(--appr-bg);color:var(--appr-ink)">Бирюзовый ◉</span> — <b>согласованное отклонение</b>: вы сами пометили это расхождение как согласованное (см. 6.5).</li>
+  <li><span class="pill warn">Жёлтый △</span> — цепочка верна, но диапазон оформлен не по разбивке книги.</li>
+  <li><span class="pill crit">Красный ✗</span> — противоречит книге или грубая ошибка ввода; причина написана в строке.</li>
+  <li><span class="pill" style="background:var(--chip-bg);color:var(--ink-2)">Серый ·</span> — чисто внутренний маршрут, правило Книги 3 не требуется.</li>
+  <li><b>Метка «НОВАЯ»</b> — запись появилась после последней полной сверки (см. кнопку «Прогресс»).</li>
+</ul>
+
+<h3>6.4 · Кнопки панели</h3>
+<ul class="tight">
+  <li><b>✓ Подтвердить соответствующие</b> — нажимает штатные кнопки подтверждения сайта для всех зелёных строк текущей страницы. Спрашивает подтверждение, между запросами делает паузу. Совет: выставьте «Показать 100 записей» — за раз подтвердится до 100 строк.</li>
+  <li><b>⬇ Ошибки в Excel (все страницы)</b> — загружает через штатный API сайта все записи (~9 800), проверяет каждую и скачивает CSV-файл со всеми проблемными строками. Файл открывается в Excel двойным кликом; колонки: ID, статус, узел, диапазоны, пункты на сайте, цепочка по книге, причина. Удобно для отчёта руководству или планирования исправлений.</li>
+  <li><b>📊 Прогресс</b> — показывает, сколько записей подтверждено из общего числа, с разбивкой по узлам (Ташкентский: …/482 и т.д.), и сколько новых записей появилось с прошлой сверки. Одновременно обновляет базу «известных» записей для метки «НОВАЯ».</li>
+  <li><b>Только проблемные</b> — скрывает зелёные строки; повторное нажатие возвращает всё.</li>
+</ul>
+
+<h3>6.5 · Согласованные отклонения</h3>
+<p>Если расхождение с книгой — это сознательное решение (оперативный приказ, телеграмма), нажмите в красной строке ссылку <b>«согласовать отклонение»</b> и укажите основание (номер приказа). Строка станет бирюзовой и перестанет считаться ошибкой — причём для всех записей с тем же правилом книги и той же цепочкой. Ссылка <b>«отменить»</b> в бирюзовой строке возвращает всё обратно. Список хранится в браузере этого компьютера; в выгрузке CSV такие строки идут со статусом «Согласовано».</p>
+
+<h3>6.6 · Подсказка на странице редактирования</h3>
+<p>При открытии записи на редактирование (кнопка ✎) справа появляется панель <b>«Книга 3: подсказка»</b>: она читает заполненную форму и таблицу пунктов и показывает цепочку, которую требует книга, — по каждому пункту: «есть», «ДОБАВИТЬ (№ …)» или «убрать лишние». Панель обновляется на лету по мере изменения формы, её тоже можно перетаскивать и сворачивать. Автозаполнение формы сознательно не делается: форма сайта загружает справочники по частям, и «тихая» автоподстановка рисковала бы незаметно исказить данные — вместо этого панель даёт точный список действий, а сохраняете вы сами.</p>
+
+<h3>6.7 · Обновление при новой редакции книги</h3>
+<p>Когда выйдет новая редакция Книги 3, база правил пересобирается конвертором из файла книги (~10 минут), и в папке расширения заменяется один файл — <code>rules_data.js</code>, после чего на странице <code>chrome://extensions</code> нажимается ⟳ (обновить). Больше ничего менять не нужно.</p>
+
+<h3>6.8 · Устранение неполадок</h3>
+<ul class="tight">
+  <li><b>Строки не раскрашиваются</b> — обновите страницу (F5); проверьте, что расширение включено на <code>chrome://extensions</code>.</li>
+  <li><b>Панель пропала</b> — вероятно, свёрнута: ищите круглую кнопку «К3» (её могли перетащить в любой угол).</li>
+  <li><b>CSV открылся «в одну колонку»</b> — откройте файл двойным кликом из проводника (не через «Данные → Из текста»); разделители и кодировка уже настроены под русский Excel.</li>
+  <li><b>После обновления книги всё стало красным</b> — заменён ли <code>rules_data.js</code> и нажат ли ⟳ на странице расширений?</li>
+</ul>
+
+<h2>7 · Насколько надёжны результаты?</h2>
+<ul class="tight">
+  <li>Разбор книги и каждый вердикт прошли 5 независимых перекрёстных проверок: выборка правил 18/18, выборка вердиктов 59/59, попытка опровергнуть «соответствующие» записи 30/30 — всё подтверждено.</li>
+  <li>По каждому из четырёх крупных шаблонов выполнен поиск по всему тексту книги (49 таблиц, все примечания): документальных оснований для варианта с сайта не найдено (исключение — Фергана–Локоть, выделено отдельно).</li>
+  <li>JS-проверка расширения сверена построчно с Python-аудитом на живом сайте — расхождений нет.</li>
+</ul>
+
+<div class="note"><b class="t">Ограничения.</b> Условные правила примечаний (порожние вагоны, скоропортящиеся грузы, «по заявкам грузоотправителей» и прочие указания Д-…) не являются безусловно обязательными — такие случаи помечаются жёлтым (предупреждение), окончательное решение принимает инженер. Инструмент ничего не меняет сам: подтверждение выполняется только штатной кнопкой сайта и только по вашей команде.</div>
+
+<h2>8 · Рекомендуемый порядок действий</h2>
+<ol class="steps">
+  <li><b>Начните с листов «Грубые ошибки» и «Проблемы диапазонов»</b> Excel-отчёта — 49 записей, точные указания готовы.</li>
+  <li><b>Согласуйте четыре шаблона с руководством:</b> каждый — одно массовое решение (Куркамыс / Красное / Ивангород / Соловей). Если какой-то из вариантов введён сознательно (оперативное изменение маршрута) — оформите это документально.</li>
+  <li><b>Подтверждайте зелёные строки расширением</b> — 8 144 записи OK подтверждаются постранично одной кнопкой.</li>
+  <li><b>Предложение владельцам сайта:</b> простая валидация ввода (запрет обратных диапазонов, 6-значных кодов в полях диапазонов и дубликатов пунктов) полностью устранит класс грубых ошибок.</li>
+</ol>
+
+<h2>9 · Реализовано и что дальше</h2>
+<p class="sub">Все предложения первой очереди уже встроены в расширение. Осталось только то, что зависит от владельцев сайта.</p>
+<div class="twrap"><table>
+  <tr><th>Функция</th><th>Что даёт</th><th>Статус</th></tr>
+  <tr>
+    <td><b>Подсказка в форме редактирования</b></td>
+    <td>Панель «Книга 3: подсказка» на странице EditPlanExport: ожидаемая цепочка, что добавить и что убрать (п. 6.6).</td>
+    <td class="num"><span class="pill good">готово</span></td>
+  </tr>
+  <tr>
+    <td><b>Прогресс подтверждения</b></td>
+    <td>Кнопка «📊 Прогресс»: подтверждено/всего, разбивка по узлам (п. 6.4).</td>
+    <td class="num"><span class="pill good">готово</span></td>
+  </tr>
+  <tr>
+    <td><b>Справочник согласованных отклонений</b></td>
+    <td>Ссылки «согласовать отклонение»/«отменить» прямо в строках; основание сохраняется (п. 6.5).</td>
+    <td class="num"><span class="pill good">готово</span></td>
+  </tr>
+  <tr>
+    <td><b>Выгрузка ошибок в Excel</b></td>
+    <td>Кнопка «⬇ Ошибки в Excel»: CSV со всеми проблемными записями по всей базе (п. 6.4).</td>
+    <td class="num"><span class="pill good">готово</span></td>
+  </tr>
+  <tr>
+    <td><b>Отметка новых записей</b></td>
+    <td>Метка «НОВАЯ» на записях, появившихся после последней сверки (п. 6.3).</td>
+    <td class="num"><span class="pill good">готово</span></td>
+  </tr>
+  <tr>
+    <td><b>Обновление базы при новой редакции книги</b></td>
+    <td>Конвертор пересобирает правила из файла книги; в расширении заменяется один файл (п. 6.7).</td>
+    <td class="num"><span class="pill good">готово</span></td>
+  </tr>
+  <tr>
+    <td><b>Автозаполнение «исправить по книге»</b></td>
+    <td>Сознательно заменено безопасной подсказкой (п. 6.6): форма сайта загружает справочники по частям, автоподстановка рисковала бы незаметно исказить данные. Возможно после согласования с владельцами сайта.</td>
+    <td class="num"><span class="pill warn">отложено</span></td>
+  </tr>
+  <tr>
+    <td><b>Серверная валидация ввода</b></td>
+    <td>Запрет обратных диапазонов, 6-значных кодов и дубликатов пунктов при вводе — грубые ошибки исчезнут у всех пользователей сразу.</td>
+    <td class="num"><span class="pill crit">владельцам e-nakl</span></td>
+  </tr>
+</table></div>
+
+<footer>
+  Источники аудита: BOOK_3_2025-10-23 (раздел Узбекских ж.д.) · e-nakl.railway.uz ListPlanExport (9 769 записей по состоянию на 27.08.2026) · Инструмент носит вспомогательный характер — ответственность за окончательное подтверждение остаётся за инженером по плану формирования.
+</footer>
+</div>

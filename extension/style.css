@@ -1,0 +1,158 @@
+#table1 tbody tr.bk3-ok td { background: #e7f6e7 !important; }
+#table1 tbody tr.bk3-warn td { background: #fff6dd !important; }
+#table1 tbody tr.bk3-note td { background: #e9e4f9 !important; } /* дополнительный план из Примечаний */
+#table1 tbody tr.bk3-err td { background: #fde3e3 !important; }
+#table1 tbody tr.bk3-intra td { background: #eef1f6 !important; }
+#table1 tbody tr.bk3-appr td { background: #dff2f0 !important; } /* согласованное отклонение */
+
+/* rejim: faqat muammoli qatorlar */
+body.bk3-hideok #table1 tbody tr.bk3-ok { display: none; }
+
+.bk3-apprlink { color: #0d6e66; font-size: 11px; text-decoration: underline; cursor: pointer; }
+.bk3-newchip {
+  display: inline-block;
+  background: #305496;
+  color: #fff;
+  font: bold 9.5px/1 Arial, sans-serif;
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin-right: 5px;
+  vertical-align: 1px;
+}
+tr.bk3-appr .bk3-badge { color: #0d6e66; }
+
+.bk3-badge {
+  margin-top: 4px;
+  font-size: 11px;
+  line-height: 1.35;
+  max-width: 340px;
+  white-space: normal;
+  color: #333;
+  border-top: 1px dashed #bbb;
+  padding-top: 3px;
+}
+tr.bk3-ok .bk3-badge { color: #1b7a1b; }
+tr.bk3-err .bk3-badge { color: #b01818; }
+tr.bk3-warn .bk3-badge { color: #8a6d00; }
+tr.bk3-note .bk3-badge { color: #5636b8; }
+
+#bk3-panel {
+  position: fixed;
+  bottom: 14px;
+  left: 14px;
+  z-index: 99999;
+  background: #fff;
+  border: 2px solid #305496;
+  border-radius: 8px;
+  padding: 8px 14px 10px;
+  font: 13px/1.5 Arial, sans-serif;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  max-width: 420px;
+}
+#bk3-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: move;
+  user-select: none;
+  touch-action: none;
+  margin: 0 -6px 6px;
+  padding: 2px 6px;
+  border-bottom: 1px solid #dde4ec;
+}
+#bk3-head .bk3-grip { color: #8a97a5; font-size: 14px; }
+#bk3-head b { flex: 1; }
+#bk3-min {
+  background: transparent !important;
+  color: #305496 !important;
+  border: 1px solid #c6d2e0 !important;
+  border-radius: 4px;
+  width: 24px;
+  height: 22px;
+  line-height: 1;
+  padding: 0 !important;
+  font-weight: bold;
+  cursor: pointer;
+}
+#bk3-min:hover { background: #eef2f7 !important; }
+#bk3-fab {
+  position: fixed;
+  bottom: 14px;
+  left: 14px;
+  z-index: 99999;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #305496;
+  color: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font: bold 15px/1 Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,.3);
+  user-select: none;
+  touch-action: none;
+}
+#bk3-fab:hover { background: #24406f; }
+#bk3-fabbadge {
+  position: absolute;
+  top: -5px;
+  right: -7px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 10px;
+  background: #b01818;
+  color: #fff;
+  font: bold 11px/1 Arial, sans-serif;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+/* ---- EditPlanExport yordamchi paneli ---- */
+#bk3-edit {
+  position: fixed;
+  top: 90px;
+  right: 14px;
+  z-index: 99999;
+  background: #fff;
+  border: 2px solid #305496;
+  border-radius: 8px;
+  padding: 8px 14px 12px;
+  font: 13px/1.5 Arial, sans-serif;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  width: 360px;
+  max-height: 75vh;
+  overflow-y: auto;
+}
+#bk3-edit .bk3-est { font-weight: bold; margin: 4px 0 8px; }
+#bk3-edit .bk3-est-bk3-ok { color: #1b7a1b; }
+#bk3-edit .bk3-est-bk3-err { color: #b01818; }
+#bk3-edit .bk3-est-bk3-warn { color: #8a6d00; }
+#bk3-edit .bk3-est-bk3-note { color: #5636b8; }
+#bk3-edit .bk3-est-bk3-appr { color: #0d6e66; }
+#bk3-edit .bk3-est-bk3-intra { color: #55606c; }
+#bk3-edit .bk3-elabel { font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; color: #7a8794; margin-bottom: 4px; }
+.bk3-echain { margin: 0 0 8px; padding-left: 20px; }
+.bk3-echain li { margin: 3px 0; }
+.bk3-eok { color: #1b7a1b; }
+.bk3-ewarn { color: #8a6d00; }
+.bk3-emiss { color: #b01818; font-weight: bold; }
+#bk3-panel .bk3-btns { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+#bk3-panel button {
+  background: #1b7a1b;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 12.5px;
+}
+#bk3-panel button:hover { filter: brightness(0.92); }
+#bk3-panel button.bk3-secondary { background: #305496; }
+#bk3-panel button.bk3-toggled { background: #b26a00; }
+#bk3-progress { margin-top: 4px; color: #555; }

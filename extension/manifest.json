@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "E-Nakl Book-3 Tekshiruvchi",
+  "version": "1.0.0",
+  "description": "e-nakl.railway.uz marshrut rejalarini Plan formirovaniya 3-kitobi bilan avtomatik solishtiradi",
+  "content_scripts": [
+    {
+      "matches": ["https://e-nakl.railway.uz/ed/Marshurt/*"],
+      "js": ["rules_data.js", "content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
